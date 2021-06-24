@@ -2,6 +2,7 @@ body {
     font-family: "Open Sans", sans-serif;
     background-image: linear-gradient(#050505, rgb(3, 3, 3));
     color: white;
+    
 }
 
 h1, h2, h3 {
@@ -83,6 +84,7 @@ a, a:hover {
   }
 .dark{
     background-image: linear-gradient(to right, #141314, #3046C5, #101011);
+   
 }
 
 .carousel-indicators li {
@@ -90,3 +92,67 @@ a, a:hover {
     height: 10px;
     border-radius: 100%;
   }
+
+  button{
+    position: relative;
+    height: 60px;
+    width: 194px;
+    margin: 0 15px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  button:first-child:hover{
+
+background: linear-gradient(90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4);
+background-size: 400%;
+  }
+  button:last-child:hover{
+
+    background: linear-gradient(90deg,#fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+      }
+
+button:first-child:before,
+button:last-child:before{
+content: '';
+position: absolute;
+background: inherit;
+top: -5px;
+right: -5px;
+bottom: -5px;
+left: -5px;
+border-radius: 50px;
+filter: blur(20px);
+opacity: 0;
+transition: opacity 0.5s
+}
+button:first-child:hover:before,
+button:last-child:hover:before{
+    opacity: 1;
+    z-index: -1;
+}
+button:hover{
+
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+@keyframes glow{
+100%{
+    background-position: 400%
+}
+
+}
+
+button:hover, button:focus {
+    outline: none;
+  }
+

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
     <link rel="stylesheet" href="css/collabor8.css" />
 
+    
 
     <title>Mindwave</title>
 </head>
@@ -30,11 +31,74 @@
                     <h1 class="newtext">SpaceX</h1>
                     <h2 class = "newtext">Flying you into the Future.</h2>
                 </div>
-                <div class="col col-md-4 col-xl-2 mt-4 "><a  href='#reserveForm'  role="button" class="btn btn-dark btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at<br /><strong>1-209-499-2731</strong>">Book a Flight Today</a> </div>
+                <div class="col col-md-4 col-xl-2 mt-4"><button  data-toggle="modal" data-target="#reserveModal">Book <br /> a Space Flight</button></div>
 
             </div>
         </div>
     </header>
+
+    
+    <div id="reserveModal" class="modal fade  div1" role="dialog">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content">
+                <div class="modal-header text-white bg-dark ">
+                    <h3 class="modal-title">Skip the Line - Reserve your Space Flight </h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body dark ">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row form-group"><label class="col col-form-label">Number of Passengers</label> 
+                                <div class="col">
+                                    <select class="form-control" name="numCampers" id="numCampers">
+                                    <option value="Select">Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col col-form-label" for="date">Departure Date</label>
+                                <div class="col ">
+                                    <input class="form-group form-control"placeholder="mm/dd/yyyy" type="date" id="date" class="date form-control">
+                                </div>
+
+                                <label class="col col-form-label" for="date">Return Date</label>
+                                <div class="col "><input class="form-group form-control"placeholder="mm/dd/yyyy" type="date" id="date" class="date form-control">
+                                
+                            </div>
+                            </div>
+                            
+                            <div class="row form-group">
+                                <label class="col-sm-6 mcol-form-label">Flight Type</label>
+                                <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                
+                                <label class="btn btn-dark active">
+                                <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Public Flight
+                              </label>
+                              <label class="btn btn-primary">
+                                <input type="radio" name="siteType" id="siteRV" autocomplete="off"> Private Flight
+                              </label>
+                            </div> 
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6"><button type="submit" class="btn btn-primary mx-auto">Search</button> 
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary mx-auto" data-dismiss="modal">Cancel</button> 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <nav class="navbar1 navbar-expand-sm navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="img/spacex-starship.jpg" height="30" width="30"/> </a>
@@ -61,11 +125,11 @@
 <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-dark">
                 <h3 class="modal-title">Login</h3>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body dark">
                 <div class="container-fluid">
                     <form>
                         <div class="forrm-row">
@@ -170,39 +234,7 @@
                     </div>
                </div>
         </div>
-        <div class="row row-content">
-            <div class="col-sm-6 mx-auto">
-                <div class="card dark">
-                    <h3 class="card-header dark bg-info text-white">Book a Space Flight Today!  </h3>
-                    <div class="card-body"> 
-                        <form id="reserveForm">
-                            <div class="row form-group dark"><label class="col col-form-label">Number of Passengers</label> 
-                                <div class="col">
-                                    <select class="form-control" name="numCampers" id="numCampers">
-                                    <option value="Select">Select</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row form-group"><label class="col col-form-label" for="date">Date</label>
-                                <div class="col "><input class="form-group form-control"placeholder="mm/dd/yyyy" type="date" id="date" class="date form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col "><button type="submit" class="btn btn-primary">Search</button> 
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
     <footer class="site-footer dark">
         <div class="container">
@@ -239,6 +271,8 @@
     $(function (){
         $('[data-toggle="tooltip"]').tooltip()
     })
+
+
 </script>
 </body>
 
